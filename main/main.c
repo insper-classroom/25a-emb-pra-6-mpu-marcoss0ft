@@ -112,7 +112,7 @@ void mpu6050_task(void *p) {
             .axis.z = accel[2] / 16384.0f,
         };
 
-        // Update AHRS
+
         FusionAhrsUpdateNoMagnetometer(&ahrs, gyroscope, accelerometer, SAMPLE_PERIOD);
 
         adc_t adc;
