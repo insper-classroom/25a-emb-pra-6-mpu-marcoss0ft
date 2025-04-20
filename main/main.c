@@ -78,7 +78,7 @@ void mpu6050_task(void *p) {
         gyro_offset_x += gyro_raw[0] / 131.0f;
         gyro_offset_y += gyro_raw[1] / 131.0f;
         gyro_offset_z += gyro_raw[2] / 131.0f;
-        sleep_ms(5);
+        vTaskDelay(pdMS_TO_TICKS(5));
     }
     gyro_offset_x /= calib_samples;
     gyro_offset_y /= calib_samples;
